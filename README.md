@@ -122,10 +122,11 @@ cp config.example.json config.json
 #### 路径处理规则
 
 - **配置文件路径**：
+
   - 相对路径：基于可执行文件所在目录
   - 绝对路径：直接使用指定路径
-  
 - **本地目录路径**：
+
   - 相对路径：基于可执行文件所在目录
   - 绝对路径：直接使用指定路径
 
@@ -153,6 +154,7 @@ cp config.example.json config.json
 ```
 
 ### 开发环境运行
+
 ```bash
 # 使用默认配置
 go run main.go
@@ -165,6 +167,7 @@ go run main.go --help
 ```
 
 ### 编译后运行
+
 ```bash
 # 编译
 go build -o deploy main.go
@@ -258,6 +261,7 @@ chmod +x build.sh
 ## 使用示例
 
 ### 显示帮助信息
+
 ```bash
 $ ./deploy --help
 Go-Deploy 部署工具
@@ -279,6 +283,7 @@ Go-Deploy 部署工具
 ```
 
 ### 使用指定配置文件
+
 ```bash
 $ ./deploy --config prod.json
 开始执行部署程序...
@@ -291,6 +296,7 @@ SSH服务器连接成功
 ```
 
 ### 使用配置文件
+
 ```bash
 $ ./deploy
 开始执行部署程序...
@@ -301,18 +307,18 @@ $ ./deploy
 SSH服务器连接成功
 正在创建SFTP客户端...
 SFTP客户端创建成功
-准备上传到远程目录: /opt/xsoft/bueryun/docker-bueryun/nginx/html/bueryun-user-app/dist
+准备上传到远程目录: /opt/xsoft/nginx/html/app/dist
 开始上传目录...
 开始遍历本地目录: /path/to/project/unpackage/dist/build/web
-创建目录: /opt/xsoft/bueryun/docker-bueryun/nginx/html/bueryun-user-app/dist
+创建目录: /opt/xsoft/nginx/html/app/dist
 文件 static/js/app.js.map 被排除，跳过上传
-创建备份: /opt/xsoft/bueryun/docker-bueryun/nginx/html/bueryun-user-app/dist/index.html -> /opt/xsoft/bueryun/docker-bueryun/nginx/html/bueryun-user-app/dist/index.html.backup
-上传文件: /path/to/project/unpackage/dist/build/web/index.html -> /opt/xsoft/bueryun/docker-bueryun/nginx/html/bueryun-user-app/dist/index.html
+创建备份: /opt/xsoft/nginx/html/app/dist/index.html -> /opt/xsoft/nginx/html/app/dist/index.html.backup
+上传文件: /path/to/project/unpackage/dist/build/web/index.html -> /opt/xsoft/nginx/html/app/dist/index.html
 文件 .DS_Store 被排除，跳过上传
-上传文件: /path/to/project/unpackage/dist/build/web/static/css/app.css -> /opt/xsoft/bueryun/docker-bueryun/nginx/html/bueryun-user-app/dist/static/css/app.css
+上传文件: /path/to/project/unpackage/dist/build/web/static/css/app.css -> /opt/xsoft/nginx/html/app/dist/static/css/app.css
 上传失败 (尝试 1/3): 网络错误
 重试上传文件 (2/3): /path/to/project/unpackage/dist/build/web/static/js/app.js
-上传文件: /path/to/project/unpackage/dist/build/web/static/js/app.js -> /opt/xsoft/bueryun/docker-bueryun/nginx/html/bueryun-user-app/dist/static/js/app.js
+上传文件: /path/to/project/unpackage/dist/build/web/static/js/app.js -> /opt/xsoft/nginx/html/app/dist/static/js/app.js
 ...
 目录上传成功!
 统计信息:
