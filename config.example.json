@@ -1,0 +1,24 @@
+{
+  "server": {
+    "host": "your-server-ip",
+    "port": 22,
+    "username": "your-username",
+    "password": "your-password",
+    "timeout": 10
+  },
+  "paths": {
+    "local": "../dist",
+    "remote": "/opt/xsoft/nginx/html/app/dist"
+  },
+  "options": {
+    "backup": true,
+    "backup_suffix": ".backup",
+    "exclude_patterns": [
+      "*.log",
+      "*.tmp",
+      ".DS_Store"
+    ],
+    "max_retries": 3,
+    "chunk_size": 1048576
+  }
+}

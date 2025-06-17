@@ -2,6 +2,8 @@
 # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
 #
 # Binaries for programs and plugins
+go-deploy
+go-deploy.exe
 *.exe
 *.exe~
 *.dll
@@ -18,7 +20,7 @@ coverage.*
 profile.cov
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
 
 # Go workspace file
 go.work
@@ -28,5 +30,46 @@ go.work.sum
 .env
 
 # Editor/IDE
-# .idea/
-# .vscode/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统生成文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 配置文件（实际使用的配置文件应该被忽略，只保留示例文件）
+config.json
+*.config.json
+!config.example.json
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+.tmp/
+
+# 备份文件
+*.backup
+*.bak
+
+# 部署相关文件
+deploy/
+dist/
+build/
+
+# 环境变量文件
+.env.local
+.env.*.local
+
+# 压缩文件
