@@ -1,0 +1,54 @@
+{
+  "name": "go-deploy",
+  "version": "1.0.0",
+  "description": "基于 Go 的自动化部署工具 - 通过 SFTP 协议将本地文件上传到远程服务器",
+  "main": "lib/index.js",
+  "bin": {
+    "go-deploy": "bin/go-deploy.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "build": "node scripts/build.js",
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/go-deploy.git"
+  },
+  "keywords": [
+    "deploy",
+    "sftp",
+    "upload",
+    "automation",
+    "go",
+    "deployment"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/go-deploy/issues"
+  },
+  "homepage": "https://github.com/your-username/go-deploy#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "optionalDependencies": {
+    "@go-deploy/darwin-arm64": "1.0.0",
+    "@go-deploy/darwin-x64": "1.0.0",
+    "@go-deploy/linux-arm64": "1.0.0",
+    "@go-deploy/linux-x64": "1.0.0",
+    "@go-deploy/win32-x64": "1.0.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.3.0"
+  }
+}

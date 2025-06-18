@@ -1,0 +1,15 @@
+{
+  "name": "go-deploy-example",
+  "version": "1.0.0",
+  "description": "go-deploy 使用示例",
+  "main": "deploy-example.js",
+  "scripts": {
+    "start": "node deploy-example.js",
+    "deploy": "go-deploy",
+    "deploy:prod": "go-deploy --config prod.json",
+    "deploy:test": "go-deploy --config test.json"
+  },
+  "dependencies": {
+    "go-deploy": "^1.0.0"
+  }
+}

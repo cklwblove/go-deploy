@@ -1,0 +1,27 @@
+# 源代码
+*.go
+go.mod
+go.sum
+main.go
+
+# 开发文件
+.git/
+.gitignore
+*.md
+!README-npm.md
+
+# 构建文件
+packages/
+scripts/build.js
+build-npm.sh
+
+# 测试文件
+test/
+
+# 配置文件示例
+config.example.json
+config.json
+
+# 其他
+.DS_Store
+*.log

@@ -1,0 +1,17 @@
+{
+  "name": "@go-deploy/darwin-x64",
+  "version": "1.0.0",
+  "description": "go-deploy 二进制文件 (darwin-x64)",
+  "main": "index.js",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/go-deploy.git"
+  },
+  "license": "MIT"
+}
