@@ -13,6 +13,8 @@ main.go
 # 构建文件
 packages/
 scripts/build.js
+scripts/publish.js
+scripts/version-check.js
 build-npm.sh
 
 # 测试文件
