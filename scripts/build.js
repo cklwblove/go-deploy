@@ -95,12 +95,29 @@ async function buildBinary(target) {
   });
 }
 
+async function cleanBinDirectory() {
+  // 只清理平台相关的子目录，保留 bin/go-deploy.js
+  const platformDirs = targets.map(target => {
+    const mappedPlatform = platformMap[target.os];
+    const mappedArch = archMap[target.arch];
+    return `${mappedPlatform}-${mappedArch}`;
+  });
+
+  for (const dir of platformDirs) {
+    const platformDir = path.join('bin', dir);
+    if (await fs.pathExists(platformDir)) {
+      await fs.remove(platformDir);
+      console.log(`清理目录: ${platformDir}`);
+    }
+  }
+}
+
 async function buildAll() {
   console.log('开始构建多平台二进制文件...\n');
 
   try {
-    // 清理 bin 目录
-    await fs.remove('bin');
+    // 清理 bin 目录下的平台子目录，但保留 bin/go-deploy.js
+    await cleanBinDirectory();
 
     // 并行构建所有目标
     await Promise.all(targets.map(buildBinary));
