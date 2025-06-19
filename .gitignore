@@ -73,3 +73,6 @@ build/
 .env.*.local
 
 # 压缩文件
+
+node_modules/
+package-lock.json
