@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const { spawn } = require('child_process');
-const path = require('path');
 const { getBinaryPath } = require('../lib/index.js');
 
 async function main() {

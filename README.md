@@ -126,6 +126,7 @@ const {
 执行部署操作。
 
 **参数:**
+
 - `options` (Object): 部署选项
   - `config` (string): 配置文件路径
   - `cwd` (string): 工作目录，默认为 `process.cwd()`
@@ -133,7 +134,8 @@ const {
   - `help` (boolean): 显示帮助信息
   - `version` (boolean): 显示版本信息
 
-**返回值:** Promise<Object>
+**返回值:** Promise`<Object>`
+
 - `code` (number): 退出代码
 - `stdout` (string): 标准输出
 - `stderr` (string): 标准错误
@@ -162,7 +164,7 @@ await deploy({
 
 获取 go-deploy 版本信息。
 
-**返回值:** Promise<string> - 版本信息
+**返回值:** Promise`<string>` - 版本信息
 
 **示例:**
 
@@ -207,30 +209,30 @@ try {
 
 ### server 配置
 
-| 字段       | 类型   | 必填 | 默认值 | 说明                           |
-| ---------- | ------ | ---- | ------ | ------------------------------ |
-| host       | string | ✅   | -      | SSH 服务器地址                 |
-| port       | number | ❌   | 22     | SSH 端口                       |
-| username   | string | ✅   | -      | SSH 用户名                     |
-| password   | string | ✅   | -      | SSH 密码（建议使用密钥认证）   |
-| timeout    | number | ❌   | 10     | 连接超时时间（秒）             |
+| 字段     | 类型   | 必填 | 默认值 | 说明                         |
+| -------- | ------ | ---- | ------ | ---------------------------- |
+| host     | string | ✅   | -      | SSH 服务器地址               |
+| port     | number | ❌   | 22     | SSH 端口                     |
+| username | string | ✅   | -      | SSH 用户名                   |
+| password | string | ✅   | -      | SSH 密码（建议使用密钥认证） |
+| timeout  | number | ❌   | 10     | 连接超时时间（秒）           |
 
 ### paths 配置
 
-| 字段   | 类型   | 必填 | 默认值 | 说明                                 |
-| ------ | ------ | ---- | ------ | ------------------------------------ |
-| local  | string | ✅   | -      | 本地目录路径（支持相对和绝对路径）   |
-| remote | string | ✅   | -      | 远程目录路径（必须是绝对路径）       |
+| 字段   | 类型   | 必填 | 默认值 | 说明                               |
+| ------ | ------ | ---- | ------ | ---------------------------------- |
+| local  | string | ✅   | -      | 本地目录路径（支持相对和绝对路径） |
+| remote | string | ✅   | -      | 远程目录路径（必须是绝对路径）     |
 
 ### options 配置
 
-| 字段             | 类型     | 必填 | 默认值    | 说明                                 |
-| ---------------- | -------- | ---- | --------- | ------------------------------------ |
-| backup           | boolean  | ❌   | false     | 是否在上传前备份远程现有文件         |
-| backup_suffix    | string   | ❌   | .backup   | 备份文件的后缀名                     |
-| exclude_patterns | string[] | ❌   | []        | 文件排除模式（支持通配符）           |
-| max_retries      | number   | ❌   | 3         | 上传失败时的最大重试次数             |
-| chunk_size       | number   | ❌   | 1048576   | 文件传输块大小（字节）               |
+| 字段             | 类型     | 必填 | 默认值  | 说明                         |
+| ---------------- | -------- | ---- | ------- | ---------------------------- |
+| backup           | boolean  | ❌   | false   | 是否在上传前备份远程现有文件 |
+| backup_suffix    | string   | ❌   | .backup | 备份文件的后缀名             |
+| exclude_patterns | string[] | ❌   | []      | 文件排除模式（支持通配符）   |
+| max_retries      | number   | ❌   | 3       | 上传失败时的最大重试次数     |
+| chunk_size       | number   | ❌   | 1048576 | 文件传输块大小（字节）       |
 
 ### 配置文件示例
 
@@ -304,21 +306,21 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+  
     steps:
     - uses: actions/checkout@v3
-    
+  
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        
+      
     - name: Install dependencies
       run: npm ci
-      
+    
     - name: Build
       run: npm run build
-      
+    
     - name: Deploy
       run: npx @winner-fed/go-deploy --config config/prod.json
 ```
@@ -357,13 +359,13 @@ fs.unlinkSync('config.temp.json');
 
 ## 🌍 支持的平台
 
-| 操作系统 | 架构   | 状态 | 二进制包                            |
-| -------- | ------ | ---- | ----------------------------------- |
-| macOS    | x64    | ✅   | @winner-fed/go-deploy-darwin-x64    |
-| macOS    | ARM64  | ✅   | @winner-fed/go-deploy-darwin-arm64  |
-| Linux    | x64    | ✅   | @winner-fed/go-deploy-linux-x64     |
-| Linux    | ARM64  | ✅   | @winner-fed/go-deploy-linux-arm64   |
-| Windows  | x64    | ✅   | @winner-fed/go-deploy-win32-x64     |
+| 操作系统 | 架构  | 状态 | 二进制包                           |
+| -------- | ----- | ---- | ---------------------------------- |
+| macOS    | x64   | ✅   | @winner-fed/go-deploy-darwin-x64   |
+| macOS    | ARM64 | ✅   | @winner-fed/go-deploy-darwin-arm64 |
+| Linux    | x64   | ✅   | @winner-fed/go-deploy-linux-x64    |
+| Linux    | ARM64 | ✅   | @winner-fed/go-deploy-linux-arm64  |
+| Windows  | x64   | ✅   | @winner-fed/go-deploy-win32-x64    |
 
 ## 🔍 错误处理
 
@@ -478,6 +480,7 @@ npm link @winner-fed/go-deploy
 ## 📄 更新日志
 
 ### v1.0.0
+
 - 🎉 初始版本发布
 - ✨ 支持 SFTP 文件上传
 - ✨ 支持多平台二进制文件
@@ -488,8 +491,6 @@ npm link @winner-fed/go-deploy
 ## 📞 支持和反馈
 
 - **GitHub Issues**: [提交问题](https://github.com/cklwblove/go-deploy/issues)
-- **GitHub Discussions**: [讨论交流](https://github.com/cklwblove/go-deploy/discussions)
-- **邮箱**: 发送邮件到维护者邮箱
 
 ## 📋 FAQ
 
@@ -528,4 +529,4 @@ A: 当前版本不支持，需要分别配置和执行多次部署。
 
 Made with ❤️ by [cklwblove](https://github.com/cklwblove)
 
-</div> 
+</div>
