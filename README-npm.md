@@ -359,11 +359,11 @@ fs.unlinkSync('config.temp.json');
 
 | 操作系统 | 架构   | 状态 | 二进制包                            |
 | -------- | ------ | ---- | ----------------------------------- |
-| macOS    | x64    | ✅   | @winner-fed/deploy-darwin-x64       |
-| macOS    | ARM64  | ✅   | @winner-fed/deploy-darwin-arm64     |
-| Linux    | x64    | ✅   | @winner-fed/deploy-linux-x64        |
-| Linux    | ARM64  | ✅   | @winner-fed/deploy-linux-arm64      |
-| Windows  | x64    | ✅   | @winner-fed/deploy-win32-x64        |
+| macOS    | x64    | ✅   | @winner-fed/go-deploy-darwin-x64    |
+| macOS    | ARM64  | ✅   | @winner-fed/go-deploy-darwin-arm64  |
+| Linux    | x64    | ✅   | @winner-fed/go-deploy-linux-x64     |
+| Linux    | ARM64  | ✅   | @winner-fed/go-deploy-linux-arm64   |
+| Windows  | x64    | ✅   | @winner-fed/go-deploy-win32-x64     |
 
 ## 🔍 错误处理
 

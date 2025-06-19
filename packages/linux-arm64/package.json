@@ -1,5 +1,5 @@
 {
-  "name": "@winner-fed/deploy-linux-arm64",
+  "name": "@winner-fed/go-deploy-linux-arm64",
   "version": "1.0.0",
   "description": "go-deploy 二进制文件 (linux-arm64)",
   "main": "index.js",

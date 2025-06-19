@@ -37,7 +37,7 @@ function setupBinaries() {
     return;
   }
 
-  const packageName = `@winner-fed/deploy-${mappedPlatform}-${mappedArch}`;
+  const packageName = `@winner-fed/go-deploy-${mappedPlatform}-${mappedArch}`;
   const binaryName = platform === 'win32' ? 'go-deploy.exe' : 'go-deploy';
 
   try {

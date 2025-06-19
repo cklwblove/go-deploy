@@ -23,7 +23,7 @@
     "go",
     "deployment"
   ],
-  "author": "Your Name",
+  "author": "cklwblove",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cklwblove/go-deploy/issues"
@@ -42,11 +42,11 @@
     "arm64"
   ],
   "optionalDependencies": {
-    "@winner-fed/deploy-darwin-arm64": "1.0.0",
-    "@winner-fed/deploy-darwin-x64": "1.0.0",
-    "@winner-fed/deploy-linux-arm64": "1.0.0",
-    "@winner-fed/deploy-linux-x64": "1.0.0",
-    "@winner-fed/deploy-win32-x64": "1.0.0"
+    "@winner-fed/go-deploy-darwin-arm64": "1.0.0",
+    "@winner-fed/go-deploy-darwin-x64": "1.0.0",
+    "@winner-fed/go-deploy-linux-arm64": "1.0.0",
+    "@winner-fed/go-deploy-linux-x64": "1.0.0",
+    "@winner-fed/go-deploy-win32-x64": "1.0.0"
   },
   "devDependencies": {
     "fs-extra": "^11.3.0"

@@ -52,7 +52,7 @@ function getBinaryPath() {
   };
   
   // 尝试从可选依赖中找到二进制文件
-  const packageName = `@go-deploy/${mappedPlatform}-${mappedArch}`;
+  const packageName = `@winner-fed/go-deploy-${mappedPlatform}-${mappedArch}`;
   const binaryPath = require.resolve(`${packageName}/bin/${binaryName}`);
   
   return binaryPath;
@@ -66,11 +66,11 @@ function getBinaryPath() {
 ```json
 {
   "optionalDependencies": {
-    "@go-deploy/darwin-x64": "1.0.0",
-    "@go-deploy/darwin-arm64": "1.0.0",
-    "@go-deploy/linux-x64": "1.0.0",
-    "@go-deploy/linux-arm64": "1.0.0",
-    "@go-deploy/win32-x64": "1.0.0"
+    "@winner-fed/go-deploy-darwin-x64": "1.0.0",
+    "@winner-fed/go-deploy-darwin-arm64": "1.0.0",
+    "@winner-fed/go-deploy-linux-x64": "1.0.0",
+    "@winner-fed/go-deploy-linux-arm64": "1.0.0",
+    "@winner-fed/go-deploy-win32-x64": "1.0.0"
   }
 }
 ```

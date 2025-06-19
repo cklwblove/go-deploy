@@ -1,3 +1,35 @@
+/**
+ * 构建步骤：
+ * 为每个平台编译 Go 二进制文件
+*  将编译结果放到 bin/{platform}/go-deploy 路径下
+*  然后再复制到对应的 packages/{platform}/bin/ 目录
+*
+* 这种结构的目的：
+* bin/ 目录作为构建过程的中间输出，作为构建产物的统一存放地
+* 最终发布时，每个平台的二进制文件会被打包到对应的 packages/{platform} 目录中
+* 这样可以创建多个平台特定的 npm 包
+*
+* 分发策略：
+* 每个平台需要单独的 npm 包，因为：
+* 不同平台的二进制文件不兼容
+* npm 的 optionalDependencies 机制会根据用户的平台自动选择合适的包
+* 这样可以减少用户下载不需要的平台文件，减少包体积
+类似 esbuild 的架构：
+主包：@winner-fed/go-deploy（只包含 JavaScript 代码）
+平台包：@winner-fed/go-deploy-darwin-arm64 等（包含对应平台的二进制文件）
+
+总结：
+* bin 目录下的各个平台子目录是构建过程的中间产物，用于：
+* 统一构建管理：所有平台的二进制文件都先生成到 bin/ 下
+* 后续分发：再从这里复制到各个 packages/{platform}/bin/ 目录
+* 发布策略：最终用户只会安装主包 + 一个对应平台的包，而不是所有平台的文件
+* 这种设计的好处：
+* ✅ 用户下载量小（只获取需要的平台）
+* ✅ 构建过程清晰（先统一构建，再分发）
+* ✅ 符合 npm 生态的最佳实践
+* ✅ 类似 esbuild, swc 等知名工具的架构
+*/
+
 const { spawn } = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
@@ -92,7 +124,7 @@ async function createPlatformPackages() {
     const mappedPlatform = platformMap[goos];
     const mappedArch = archMap[goarch];
 
-    const packageName = `@winner-fed/deploy-${mappedPlatform}-${mappedArch}`;
+    const packageName = `@winner-fed/go-deploy-${mappedPlatform}-${mappedArch}`;
     const packageDir = path.join('packages', `${mappedPlatform}-${mappedArch}`);
 
     // 创建包目录
