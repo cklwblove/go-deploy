@@ -92,7 +92,7 @@ async function createPlatformPackages() {
     const mappedPlatform = platformMap[goos];
     const mappedArch = archMap[goarch];
 
-    const packageName = `@go-deploy/${mappedPlatform}-${mappedArch}`;
+    const packageName = `@winner-fed/deploy-${mappedPlatform}-${mappedArch}`;
     const packageDir = path.join('packages', `${mappedPlatform}-${mappedArch}`);
 
     // 创建包目录
@@ -116,7 +116,7 @@ async function createPlatformPackages() {
       cpu: [mappedArch],
       repository: {
         type: 'git',
-        url: 'git+https://github.com/your-username/go-deploy.git'
+        url: 'git+https://github.com/cklwblove/go-deploy.git'
       },
       license: 'MIT'
     };

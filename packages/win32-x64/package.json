@@ -1,5 +1,5 @@
 {
-  "name": "@go-deploy/win32-x64",
+  "name": "@winner-fed/deploy-win32-x64",
   "version": "1.0.0",
   "description": "go-deploy 二进制文件 (win32-x64)",
   "main": "index.js",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/go-deploy.git"
+    "url": "git+https://github.com/cklwblove/go-deploy.git"
   },
   "license": "MIT"
 }

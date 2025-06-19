@@ -1,5 +1,5 @@
 {
-  "name": "go-deploy",
+  "name": "@winner-fed/go-deploy",
   "version": "1.0.0",
   "description": "基于 Go 的自动化部署工具 - 通过 SFTP 协议将本地文件上传到远程服务器",
   "main": "lib/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/go-deploy.git"
+    "url": "git+https://github.com/cklwblove/go-deploy.git"
   },
   "keywords": [
     "deploy",
@@ -26,9 +26,9 @@
   "author": "Your Name",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-username/go-deploy/issues"
+    "url": "https://github.com/cklwblove/go-deploy/issues"
   },
-  "homepage": "https://github.com/your-username/go-deploy#readme",
+  "homepage": "https://github.com/cklwblove/go-deploy#readme",
   "engines": {
     "node": ">=14.0.0"
   },
@@ -42,11 +42,11 @@
     "arm64"
   ],
   "optionalDependencies": {
-    "@go-deploy/darwin-arm64": "1.0.0",
-    "@go-deploy/darwin-x64": "1.0.0",
-    "@go-deploy/linux-arm64": "1.0.0",
-    "@go-deploy/linux-x64": "1.0.0",
-    "@go-deploy/win32-x64": "1.0.0"
+    "@winner-fed/deploy-darwin-arm64": "1.0.0",
+    "@winner-fed/deploy-darwin-x64": "1.0.0",
+    "@winner-fed/deploy-linux-arm64": "1.0.0",
+    "@winner-fed/deploy-linux-x64": "1.0.0",
+    "@winner-fed/deploy-win32-x64": "1.0.0"
   },
   "devDependencies": {
     "fs-extra": "^11.3.0"
