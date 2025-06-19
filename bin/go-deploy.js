@@ -9,7 +9,8 @@ async function main() {
 
     // 将所有命令行参数传递给 Go 二进制文件
     const child = spawn(binaryPath, process.argv.slice(2), {
-      stdio: 'inherit'
+      stdio: 'inherit',
+      cwd: process.cwd() // 确保使用调用者的工作目录
     });
 
     child.on('exit', (code) => {

@@ -155,10 +155,19 @@ async function createPlatformPackages() {
 
     await fs.copy(sourcePath, targetPath);
 
+    // 设置执行权限（非 Windows 系统）
+    if (mappedPlatform !== 'win32') {
+      await fs.chmod(targetPath, '755');
+    }
+
+    // 读取主包的版本号
+    const mainPackageJson = await fs.readJson('package.json');
+    const version = mainPackageJson.version;
+
     // 创建 package.json
     const packageJson = {
       name: packageName,
-      version: '1.0.0',
+      version: version,
       description: `go-deploy 二进制文件 (${mappedPlatform}-${mappedArch})`,
       main: 'index.js',
       os: [mappedPlatform],

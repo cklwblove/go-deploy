@@ -62,7 +62,7 @@ function setupBinaries() {
 }
 
 // 设置主命令行工具权限
-const mainBinPath = path.join(__dirname, '..', 'bin', 'go-deploy');
+const mainBinPath = path.join(__dirname, '..', 'bin', 'go-deploy.js');
 if (fs.existsSync(mainBinPath) && os.platform() !== 'win32') {
   makeExecutable(mainBinPath);
 }

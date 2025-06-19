@@ -5,11 +5,13 @@
   "main": "deploy-example.js",
   "scripts": {
     "start": "node deploy-example.js",
+    "test": "node test-example.js",
+    "setup": "node setup-example.js",
     "deploy": "go-deploy",
     "deploy:prod": "go-deploy --config prod.json",
     "deploy:test": "go-deploy --config test.json"
   },
   "dependencies": {
-    "go-deploy": "^1.0.0"
+    "@winner-fed/go-deploy": "file:.."
   }
 }

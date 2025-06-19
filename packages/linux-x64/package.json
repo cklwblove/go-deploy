@@ -1,6 +1,6 @@
 {
   "name": "@winner-fed/go-deploy-linux-x64",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "go-deploy 二进制文件 (linux-x64)",
   "main": "index.js",
   "os": [

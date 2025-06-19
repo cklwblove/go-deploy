@@ -154,13 +154,13 @@ func main() {
 	// 自定义Usage函数
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Go-Deploy 部署工具\n\n")
-		fmt.Fprintf(os.Stderr, "用法: %s [选项]\n\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "用法: go-deploy [选项]\n\n")
 		fmt.Fprintf(os.Stderr, "选项:\n")
 		flag.PrintDefaults()
 		fmt.Fprintf(os.Stderr, "\n示例:\n")
-		fmt.Fprintf(os.Stderr, "  %s                           # 使用默认配置文件 config.json\n", os.Args[0])
-		fmt.Fprintf(os.Stderr, "  %s --config prod.json        # 使用指定配置文件\n", os.Args[0])
-		fmt.Fprintf(os.Stderr, "  %s --config /path/to/config.json  # 使用绝对路径配置文件\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "  go-deploy                           # 使用默认配置文件 config.json\n")
+		fmt.Fprintf(os.Stderr, "  go-deploy --config prod.json        # 使用指定配置文件\n")
+		fmt.Fprintf(os.Stderr, "  go-deploy --config /path/to/config.json  # 使用绝对路径配置文件\n")
 	}
 
 	// 解析命令行参数
@@ -182,13 +182,12 @@ func main() {
 	fmt.Println("开始执行部署程序...")
 	startTime := time.Now() // 记录开始时间
 
-	// 获取当前可执行文件所在目录
-	exePath, err := os.Executable()
+	// 获取当前工作目录
+	workDir, err := os.Getwd()
 	if err != nil {
-		fmt.Printf("获取可执行文件路径失败: %v\n", err)
+		fmt.Printf("获取当前工作目录失败: %v\n", err)
 		return
 	}
-	baseDir := filepath.Dir(exePath)
 
 	// 处理配置文件路径
 	var finalConfigPath string
@@ -196,8 +195,8 @@ func main() {
 		// 绝对路径直接使用
 		finalConfigPath = *configPath
 	} else {
-		// 相对路径基于可执行文件目录
-		finalConfigPath = filepath.Join(baseDir, *configPath)
+		// 相对路径基于当前工作目录
+		finalConfigPath = filepath.Join(workDir, *configPath)
 	}
 
 	fmt.Printf("尝试读取配置文件: %s\n", finalConfigPath)
@@ -217,7 +216,7 @@ func main() {
 	if filepath.IsAbs(config.Paths.Local) {
 		localDir = config.Paths.Local
 	} else {
-		localDir = filepath.Join(baseDir, config.Paths.Local)
+		localDir = filepath.Join(workDir, config.Paths.Local)
 		localDir, err = filepath.Abs(localDir)
 		if err != nil {
 			fmt.Printf("获取本地目录绝对路径失败: %v\n", err)

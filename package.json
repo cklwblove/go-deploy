@@ -1,6 +1,6 @@
 {
   "name": "@winner-fed/go-deploy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 Go 的自动化部署工具 - 通过 SFTP 协议将本地文件上传到远程服务器",
   "main": "lib/index.js",
   "bin": {
@@ -9,7 +9,13 @@
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
     "build": "node scripts/build.js",
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "publish:patch": "node scripts/publish.js patch",
+    "publish:minor": "node scripts/publish.js minor",
+    "publish:major": "node scripts/publish.js major",
+    "publish:dry": "node scripts/publish.js patch --dry-run",
+    "version": "node scripts/publish.js",
+    "version:check": "node scripts/version-check.js"
   },
   "repository": {
     "type": "git",
@@ -42,11 +48,11 @@
     "arm64"
   ],
   "optionalDependencies": {
-    "@winner-fed/go-deploy-darwin-arm64": "1.0.0",
-    "@winner-fed/go-deploy-darwin-x64": "1.0.0",
-    "@winner-fed/go-deploy-linux-arm64": "1.0.0",
-    "@winner-fed/go-deploy-linux-x64": "1.0.0",
-    "@winner-fed/go-deploy-win32-x64": "1.0.0"
+    "@winner-fed/go-deploy-darwin-arm64": "^1.0.1",
+    "@winner-fed/go-deploy-darwin-x64": "^1.0.1",
+    "@winner-fed/go-deploy-linux-arm64": "^1.0.1",
+    "@winner-fed/go-deploy-linux-x64": "^1.0.1",
+    "@winner-fed/go-deploy-win32-x64": "^1.0.1"
   },
   "devDependencies": {
     "fs-extra": "^11.3.0"
