@@ -4,13 +4,13 @@ set -e
 
 echo "构建 go-deploy npm 包..."
 
-# 1. 构建所有平台的二进制文件
-echo "步骤 1: 构建多平台二进制文件"
-npm run build
-
-# 2. 安装依赖
-echo "步骤 2: 安装依赖"
+# 1. 安装依赖
+echo "步骤 1: 安装依赖"
 npm install
+
+# 2. 构建所有平台的二进制文件
+echo "步骤 2: 构建多平台二进制文件"
+npm run build
 
 # 3. 运行测试（需要先构建二进制文件）
 echo "步骤 3: 运行测试"

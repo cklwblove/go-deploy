@@ -25,3 +25,8 @@ config.json
 # 其他
 .DS_Store
 *.log
+
+.idea/
+example/
+
+
