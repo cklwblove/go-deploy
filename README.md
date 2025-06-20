@@ -4,7 +4,6 @@
 
 [![npm version](https://badge.fury.io/js/@winner-fed%2Fgo-deploy.svg)](https://www.npmjs.com/package/@winner-fed/go-deploy)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js CI](https://github.com/cklwblove/go-deploy/workflows/Node.js%20CI/badge.svg)](https://github.com/cklwblove/go-deploy/actions)
 
 ## ✨ 特性
 
